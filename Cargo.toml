@@ -4,3 +4,8 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+rocket = { version = "0.5.1", features = ["secrets", "tls", "mtls", "http2", "json", "msgpack", "uuid"]}
+
+[[bin]]
+name = "backend"
+path = "backend/src/main.rs"
