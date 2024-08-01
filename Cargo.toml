@@ -1,11 +1,13 @@
-[package]
-name = "noruffle"
+[workspace]
+members = ["backend"]
+default-members = ["backend"]
+resolver = "2"
+
+
+[workspace.dependencies]
+rocket = { version = "0.5.1", features = ["json"]}
+
+[workspace.package]
 version = "0.1.0"
 edition = "2021"
-
-[dependencies]
-rocket = { version = "0.5.1", features = ["secrets", "tls", "mtls", "http2", "json", "msgpack", "uuid"]}
-
-[[bin]]
-name = "backend"
-path = "backend/src/main.rs"
+authors = ["Vitalii Vorobiov <noruffle@gmail.com>"]
