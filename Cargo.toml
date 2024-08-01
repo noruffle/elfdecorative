@@ -10,4 +10,3 @@ rocket = { version = "0.5.1", features = ["json"]}
 [workspace.package]
 version = "0.1.0"
 edition = "2021"
-authors = ["Vitalii Vorobiov <noruffle@gmail.com>"]
