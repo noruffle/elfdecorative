@@ -1,15 +1,16 @@
-use actix_web::*;
-use controller::{get_api, home};
+mod service;
 mod controller;
+mod interface;
+mod module;
 
-#[actix_web::main]
-async fn main() -> std::io::Result<()> {
-  HttpServer::new(
-    || App::new()
-      .service(home)
-      .service(get_api)
-  )
-  .bind(("127.0.0.1", 8080))?
-  .run()
-  .await
+use module::*;
+use service::get_home;
+
+#[tokio::main]
+async fn main() {
+  let app = Router::new()
+    .route("/", get(get_home))
+  ;
+  let listener = tokio::net::TcpListener::bind("0.0.0.0:9000").await.unwrap();
+    axum::serve(listener, app).await.unwrap();
 }
