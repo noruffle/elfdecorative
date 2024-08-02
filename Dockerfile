@@ -1,35 +1,19 @@
-FROM docker.io/rust:1-slim-bookworm AS build
+FROM rust:1.80 as build
 
-## cargo package name: customize here or provide via --build-arg
-ARG pkg=rocket-app
+RUN USER=root
+WORKDIR /noruffle
 
-WORKDIR /build
+COPY ./Cargo.lock ./Cargo.lock
+COPY ./Cargo.toml ./Cargo.toml
 
-COPY . .
+RUN cargo build --release
+RUN rm src/*.rs
 
-RUN --mount=type=cache,target=/build/target \
-    --mount=type=cache,target=/usr/local/cargo/registry \
-    --mount=type=cache,target=/usr/local/cargo/git \
-    set -eux; \
-    cargo build --release; \
-    objcopy --compress-debug-sections target/release/$pkg ./main
+COPY ./src ./src
 
-################################################################################
+RUN rm ./target/release/deps/noruffle*
+RUN cargo build --release
 
-FROM docker.io/debian:bookworm-slim
-
-WORKDIR /app
-
-## copy the main binary
-COPY --from=build /build/main ./
-
-## copy runtime assets which may or may not exist
-COPY --from=build /build/Rocket.tom[l] ./static
-COPY --from=build /build/stati[c] ./static
-COPY --from=build /build/template[s] ./templates
-
-## ensure the container listens globally on port 8080
-ENV ROCKET_ADDRESS=0.0.0.0
-ENV ROCKET_PORT=443
-
-CMD ./main
+FROM debian:buster-slim
+COPY --from=build /noruffle/target/release/noruffle .
+CMD ["./noruffle"]
