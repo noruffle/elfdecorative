@@ -1,15 +1,20 @@
-#[macro_use] extern crate rocket;
+use actix_web::{web, App, HttpServer, Responder};
 
-use rocket::serde::json::{serde_json::json, Json, Value};
-
-#[get("/")]
-fn index() -> Json<Value> {
-  Json(json!({
-    "name": "Ruffle"
-  }))
+async fn index() -> impl Responder {
+    "Hello world!"
 }
 
-#[launch]
-fn rocket() -> _ {
-  rocket::build().mount("/", routes![index])
+#[actix_web::main]
+async fn main() -> std::io::Result<()> {
+    HttpServer::new(|| {
+        App::new().service(
+            // prefixes all resources and routes attached to it...
+            web::scope("/app")
+                // ...so this handles requests for `GET /app/index.html`
+                .route("/index.html", web::get().to(index)),
+        )
+    })
+    .bind(("127.0.0.1", 8080))?
+    .run()
+    .await
 }
