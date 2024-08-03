@@ -1,0 +1,9 @@
+.sectionbar_image > .img {
+
+  object-fit: cover;
+}
+
+.img {
+  height: inherit;
+  width: inherit;
+}

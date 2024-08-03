@@ -1,0 +1,43 @@
+:root {
+  --dark-color-menu: rgb(27, 27, 31);
+  --dark-color-text: rgb(235, 235, 245);
+  --dark-color-footer: rgb(27, 27, 31);
+  --dark-color-background: rgb(60, 60, 69);
+  --dark-color-border: rgb(93, 93, 107);
+
+
+  --light-color-menu: rgb(246, 248, 250);
+  --light-color-menu-focus: rgb(235, 235, 235);
+  --light-color-text: rgb(150, 150, 150);
+  --light-color-text-focus: rgb(94, 94, 94);
+  --light-color-footer: rgb(246, 248, 250);
+  --light-color-background: rgb(246, 248, 250);
+  --light-color-border: rgb(207, 207, 207);
+  
+  
+  --font-base: "Inter", sans-serif;
+
+}
+
+html, body {
+  margin: 0;
+
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+
+
+  /* Dark */
+  /* background-color: var(--dark-color-background); */
+  /* Light */
+  
+  font-size: 14px;
+  
+  position: relative;
+  
+  background-color: var(--light-color-background);
+}

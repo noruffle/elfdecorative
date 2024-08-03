@@ -1,0 +1,35 @@
+.footer {
+
+  display: flex;
+  flex-direction: row;
+  flex: 0;
+
+  justify-content: center;
+
+  
+  font-size: 10px;
+  
+  padding: 0.01vh 40vh;
+  
+  position: relative;
+  /* Dark */
+  /* color: var(--dark-color-text); */
+  
+  /* Light */
+  color: var(--light-color-text);
+  border-top: 1px solid var(--light-color-border);
+}
+
+.p, .a {
+  text-decoration: none;
+  
+  align-items: center;  
+  
+  font-family: var(--font-mono);
+  
+  /* Dark */
+  /* color: var(--dark-color-text); */
+
+  /* Light */
+  color: var(--light-color-text);
+}

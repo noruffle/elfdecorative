@@ -1,0 +1,12 @@
+.sectionbar {
+  display: flex;
+  flex-direction: row;
+
+  height: inherit;
+
+  box-sizing: border-box;
+  overflow: hidden;
+  
+  flex: 1;
+  position: relative;
+}

@@ -1,0 +1,35 @@
+.sectionbar_image {
+  border: 0.5px solid rgba(255, 255, 255, 0.1);
+  flex: 1;
+
+  height: inherit;
+  overflow: hidden;
+
+  transition: flex .4s;
+}
+
+.sectionbar_image:hover {
+  flex: 1.5;
+  height: inherit;
+}
+
+.image_info {
+  display: none; /* Скрываем элемент по умолчанию */
+  position: absolute;
+  justify-content: center;
+  bottom: 0;
+  height: 5vh;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Полупрозрачный черный фон */
+  font-family: var(--font-base);
+  color: white; /* Цвет текста */
+  text-align: center; /* Центрируем текст */
+  padding: 10px 0;
+  padding-top: 5vh;
+}
+
+
+.sectionbar_image:hover  .image_info {
+  display: block; /* Показываем элемент при наведении */
+}

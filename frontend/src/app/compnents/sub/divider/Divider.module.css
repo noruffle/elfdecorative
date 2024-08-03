@@ -1,0 +1,6 @@
+.divider {
+  height: 20px;
+
+  background-color: var(--light-color-menu-focus);
+  border-top: 1px solid var(--light-color-border);
+}
