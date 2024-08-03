@@ -1,8 +1,16 @@
 {
-  "dependencies": {
-    "express": "^4.19.2"
-  },
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
   "scripts": {
-    "start": "node main"
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "nuxt": "^3.12.4",
+    "vue": "latest"
   }
 }
