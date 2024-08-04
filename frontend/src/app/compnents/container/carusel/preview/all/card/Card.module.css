@@ -1,9 +1,10 @@
 .card {
-  height: inherit;
+  height: 325px;
+  width: 100vw;
+
   display: flex;
   flex-wrap: wrap;
 
-  padding: 22px;
 
   flex-direction: column;
   justify-content: flex-end;
