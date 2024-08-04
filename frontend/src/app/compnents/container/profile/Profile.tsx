@@ -10,7 +10,6 @@ export default function Profile() {
         <Column/>
         <Column/>
         <Column/>
-        <Column/>
       </div>
     </div>
   )
