@@ -1,24 +1,24 @@
 .header {
-  display: grid;
+  z-index: 1;
+  
+  top: 0;
+  min-height: 35px;
 
+  position: sticky;
+
+  display: grid;
   align-content: center;
   justify-content: center;
   justify-items: center;
+  
   gap: 10px;
-  padding: 1vh 0;
+  padding: 5px 0;
 
   font-family: var(--font-base);
   font-weight: 600;
 
-  position: sticky;
-  top: 0;
-  /* Dark */
-  /* background-color: var(--dark-color-background); */
-
-  /* Light */
+  color: #616161;
   background-color: white;
   border-bottom: 1px solid var(--light-color-border);
-  color: #616161;
-
-  z-index: 1;
+  
 }

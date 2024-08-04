@@ -1,10 +1,21 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
+
 
 import Header from "./compnents/header/Header";
 import Footer from "./compnents/footer/Footer";
 
+const josefin = localFont({
+  src: [
+    {
+      path: "../../public/fonts/Josefin.ttf",
+      weight: "100",
+      style: 'normal'
+    }
+  ]
+})
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -19,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={josefin.className}>
         <Header/>
         {children}
         <Footer/>

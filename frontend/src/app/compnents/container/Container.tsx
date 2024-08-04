@@ -1,13 +1,14 @@
 import React from 'react'
-import Section from './section/Section'
 import css from './Container.module.css'
-import Sub from '../sub/Sub'
+import Carusel from './carusel/Carusel'
+import Profile from './profile/Profile'
+
 
 export default function Container() {
   return (
     <div className={css.container}>
-      <Section/>
-      <Sub/>
+      <Carusel/>
+      <Profile/>
     </div>
   )
 }

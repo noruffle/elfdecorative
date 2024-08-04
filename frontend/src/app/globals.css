@@ -14,21 +14,22 @@
   --light-color-background: rgb(246, 248, 250);
   --light-color-border: rgb(207, 207, 207);
   
+  --font-color-gold: #b99e00;
   
   --font-base: "Inter", sans-serif;
+  --font: "Josefin Sans", sans-serif;
 
 }
 
 html, body {
   margin: 0;
+  padding: 0;
 
-  height: 100%;
-  width: 100%;
+  max-width: 100%;
+  min-height: calc(100vh - 380px);
 
   display: flex;
   flex-direction: column;
-
-  justify-content: space-between;
 
 
   /* Dark */

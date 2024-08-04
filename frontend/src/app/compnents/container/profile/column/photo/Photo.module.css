@@ -1,0 +1,10 @@
+.photo {
+  margin: 0;
+  padding: 0;
+
+  height: 500px;
+  width: 100%;
+
+  border-radius: 10px;
+  background-color: grey;
+}
