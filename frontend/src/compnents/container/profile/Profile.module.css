@@ -1,0 +1,20 @@
+.profile {
+  margin: 0;
+  padding: 22px;
+
+  height: inherit;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+
+}
+
+.wrap {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 22px;
+}

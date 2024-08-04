@@ -1,0 +1,26 @@
+.header {
+  z-index: 1;
+  
+  top: 0;
+  min-height: 35px;
+  min-width: 100px;
+  width: -webkit-fill-available;
+
+  position: sticky;
+
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+  
+  gap: 10px;
+  padding: 0;
+
+  font-family: var(--font-baSE);
+  font-weight: 1000;
+
+  color: #616161;
+  background-color: white;
+  border-bottom: 1px solid var(--light-color-border);
+  
+}

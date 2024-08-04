@@ -1,0 +1,65 @@
+.column {
+
+  gap: 22px;
+
+  height: 100%;
+
+  width: -webkit-fill-available;
+  min-width: 300px;
+  max-width: 450px;
+  /* width: 225 делает 2 колонки на телефоне */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 430px) {
+ 
+  .column {
+    min-width: 100%;
+    max-width: 100%;
+  }
+  
+}
+
+@media (min-width: 768px) {
+ 
+  .column {
+    min-width: 350px;
+    max-width: 450px;
+    width: 0;
+  }
+
+}
+
+@media (min-width: 820px) {
+ 
+  .column {
+    min-width: 350px;
+    max-width: 450px;
+    width: 0;
+  }
+
+}
+
+@media (min-width: 853px) {
+ 
+  .column {
+    min-width: 385px;
+    max-width: 450px;
+    width: 0;
+  }
+
+}
+
+@media (min-width: 1024px) {
+ 
+  .column {
+    min-width: 300px;
+    max-width: 450px;
+    width: 0;
+  }
+
+}

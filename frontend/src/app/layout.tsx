@@ -4,8 +4,8 @@ import type { Metadata } from "next";
 
 import localFont from "next/font/local";
 
-import Header from "./compnents/header/Header";
-import Footer from "./compnents/footer/Footer";
+import Header from "@/src/compnents/header/Header";
+import Footer from "@/src/compnents/footer/Footer";
 
 const josefin = localFont({
   src: [

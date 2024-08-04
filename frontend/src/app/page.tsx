@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import React from 'react'
-import Container from "./compnents/container/Container";
-import config from '@/config.json'
+import Container from "../compnents/container/Container";
+import config from '@/src/config.json'
 
 
 export const metadata: Metadata = {

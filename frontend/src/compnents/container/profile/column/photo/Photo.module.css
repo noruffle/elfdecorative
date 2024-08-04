@@ -1,0 +1,11 @@
+.photo {
+  margin: 0;
+  padding: 0;
+  object-fit: cover;
+
+  height: 450px;
+  width: 100%;
+
+  border-radius: 0;
+  background-color: grey;
+}

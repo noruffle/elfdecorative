@@ -1,0 +1,10 @@
+.preview {
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+  width: 100%;
+
+  position: relative;
+  transition: .3s cubic-bezier(.25,.8,.5,1);
+}
