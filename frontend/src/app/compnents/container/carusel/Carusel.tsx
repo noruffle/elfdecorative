@@ -1,5 +1,5 @@
 import React from 'react'
-import css from './carusel.module.css'
+import css from './Carusel.module.css'
 import Preview from './preview/Preview'
 
 export default function Carusel() {

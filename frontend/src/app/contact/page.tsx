@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import React from 'react'
-import config from '@/config.json'
+import config from '@/src/config.json'
 
 
 export const metadata: Metadata = {
