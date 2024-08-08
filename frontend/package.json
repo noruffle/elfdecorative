@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.13.0",
+    "@emotion/styled": "^11.13.0",
+    "@mui/joy": "^5.0.0-beta.48",
     "i18next": "^23.12.2",
     "i18next-http-backend": "^2.5.2",
     "next": "14.2.5",
