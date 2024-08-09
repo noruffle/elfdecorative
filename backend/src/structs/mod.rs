@@ -1,2 +1,3 @@
-pub mod struct_text;
-pub mod struct_image;
+pub mod text;
+pub mod image;
+pub mod gallery;

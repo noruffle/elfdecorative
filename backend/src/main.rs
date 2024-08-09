@@ -1,4 +1,4 @@
-use actix_web::{get, App, HttpServer, Responder, HttpResponse};
+use actix_web::{get, post, delete, App, HttpServer, Responder, HttpResponse};
 use actix_cors::Cors;
 
 use serde::{Deserialize, Serialize};
@@ -6,8 +6,8 @@ use serde::{Deserialize, Serialize};
 use std::fs::File;
 use std::io::{BufReader, Write, Result};
 
-use structs::struct_image::{Image, ImageStore};
-use structs::struct_text::Text;
+use structs::image::{Image, ImageStore};
+use structs::text::Text;
 
 mod api;
 mod structs;
@@ -38,8 +38,13 @@ async fn main() -> Result<()>{
     
     App::new()
       .wrap(cors)
-      .service(crate::api::api_text::api_home)
-      .service(crate::api::api_image::api_image)
+
+      .service(crate::api::home::get_home)
+
+      .service(crate::api::image::get_images)
+      .service(crate::api::image::post_image)
+      .service(crate::api::image::delete_image)
+
   })
   .bind(("127.0.0.1", 8000))?
   .run()
