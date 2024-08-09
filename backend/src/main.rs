@@ -1,4 +1,4 @@
-use actix_web::{get, web, App, HttpServer, Responder, HttpResponse};
+use actix_web::{get, App, HttpServer, Responder, HttpResponse};
 use actix_cors::Cors;
 
 use serde::{Deserialize, Serialize};
@@ -7,7 +7,7 @@ use std::fs::File;
 use std::io::{BufReader, Write, Result};
 
 use structs::struct_image::{Image, ImageStore};
-use structs::struct_text::{Text};
+use structs::struct_text::Text;
 
 mod api;
 mod structs;
@@ -21,9 +21,6 @@ async fn main() -> Result<()>{
   };
 
   let mut image_store = ImageStore::new();
-
-  let read_json_file = Image::read_image_json();
-  let create_json_file = Image::create_image_json();
 
   image_store.add_image(image);
   image_store.save_to_file("image_array.json")?;
