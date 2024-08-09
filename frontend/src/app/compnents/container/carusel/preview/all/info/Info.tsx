@@ -1,5 +1,9 @@
 import React from 'react'
 import css from './Info.module.css'
+import Card from '@mui/joy/Card'
+import Typography from '@mui/joy/Typography'
+import CardContent from '@mui/joy/CardContent'
+import Box from '@mui/joy/Box'
 
 export default function Info () {
   return (
@@ -11,5 +15,19 @@ export default function Info () {
         </p>
       </div>
     </div>
+  )
+}
+
+
+function A () {
+  return (
+    <Card>
+      <CardContent >
+        <Typography>Elf Decorative</Typography>
+        <Box component='p' sx={{}}>
+          Text
+        </Box>
+      </CardContent>
+    </Card>
   )
 }

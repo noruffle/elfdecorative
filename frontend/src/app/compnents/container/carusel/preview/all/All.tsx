@@ -3,6 +3,7 @@ import css from './All.module.css'
 import Card from './card/Card'
 import Info from './info/Info'
 
+
 export default function All() {
 
   const color: string[] = [

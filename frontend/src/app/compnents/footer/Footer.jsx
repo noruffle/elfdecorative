@@ -76,7 +76,7 @@ export default function Footer () {
 
   return (
 
-    <Box sx={{margin: 0, width: '-webkit-fill-available', padding: "22px", display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center', background: 'linear-gradient(0deg, rgba(107,107,107,0.7368892381171219) 0%, rgba(255,0,0,0) 100%, rgba(255,255,255,0) 100%);', gap: '20px', fontSize: 10, fontFamily: 'Open Sans'}}>
+    <Box sx={{margin: 0, minWidth:'400px', width: '-webkit-fill-available', padding: "22px", display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center', background: 'linear-gradient(0deg, rgba(107,107,107,0.7368892381171219) 0%, rgba(255,0,0,0) 100%, rgba(255,255,255,0) 100%);', gap: '20px', fontSize: 10, fontFamily: 'Open Sans'}}>
       <Sheet sx={{background:'rgba(0,0,0,0)',width:'-webkit-fill-available', height: '35px', display: 'flex', flexDirection: 'row', justifyContent:'center', gap: '7px', borderTop: '1pz solid black', paddingTop: '22pz'}}>
         <SocialBox href="" svg={svg.gmail}/>
         <SocialBox href="" svg={svg.facebook}/>
@@ -87,10 +87,10 @@ export default function Footer () {
         <SocialBox href="" svg={svg.github}/>  
       </Sheet>
 
-      <Sheet sx={{margon:0,position:'relative',bottom:0, display:'flex',flexDirection:'column', bgcolor:'rgba(0,0,0,0)', alignItems:'center', fontFamily:'Open Sans', fontWeight:600}}>
+      <Sheet sx={{margon:0, maxWidth:'400px', position:'relative',bottom:0, display:'flex',flexDirection:'column', bgcolor:'rgba(0,0,0,0)', alignItems:'start', fontFamily:'Open Sans', fontWeight:600}}>
         <ContactBox/>
-        <CopyrightBox text={'Copyright © 2024 - present. Made by noruffle'}/>
       </Sheet>
+        <CopyrightBox text={'Copyright © 2024 - present. Made by noruffle'}/>
 
     </Box>
 
