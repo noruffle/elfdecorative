@@ -1,4 +1,17 @@
 services:
+  frontend:
+    container_name: frontend
+    image: noruffle/frontend:latest
+    build:
+      context: ./frontend
+      dockerfile: next.Dockerfile
+    ports:
+      - 3000:3000
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8080
+    depends_on:
+      - backend
+
   backend:
     container_name: backend
     image: noruffle/backend:latest

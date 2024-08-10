@@ -1,7 +1,7 @@
 export default async function fetchData(path, setData) {
   try {
     
-    const response = await fetch(`http://localhost:8000/${path}`);
+    const response = await fetch(`http://localhost:8080/${path}`);
     const data = await response.json();
     setData(data.message);
   

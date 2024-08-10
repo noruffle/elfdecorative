@@ -4,6 +4,8 @@ WORKDIR /app
 
 ARG DATABASE_URL
 ENV DATABASE_URL=$DATABASE_URL
+
+# REQUIRED: DEPENDENCIES
 RUN apk add --no-cache musl-dev gcc
 
 COPY . .
