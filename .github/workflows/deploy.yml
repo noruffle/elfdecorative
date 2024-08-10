@@ -36,6 +36,7 @@ jobs:
           file: |
             frontend/next.Dockerfile
             backend/rust.Dockerfile
+            db
             
       - name: Deploy to server
         env:
