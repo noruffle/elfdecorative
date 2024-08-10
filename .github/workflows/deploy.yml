@@ -29,8 +29,14 @@ jobs:
         with:
           context: .
           push: true
-          tags: noruffle/frontend:latest,noruffle/backend:latest,db  # Замените на ваши теги
-
+          tags: | 
+            noruffle/frontend:latest
+            noruffle/backend:latest
+            db  # Замените на ваши теги
+          file: |
+            frontend/next.Dockerfile
+            backend/rust.Dockerfile
+            
       - name: Deploy to server
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
