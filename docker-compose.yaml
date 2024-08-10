@@ -4,7 +4,7 @@ services:
     image: noruffle/frontend:latest
     build:
       context: ./frontend
-      dockerfile: Dockerfile
+      dockerfile: node.Dockerfile
     ports:
       - 3000:3000
     environment:
@@ -17,7 +17,7 @@ services:
     image: noruffle/backend:latest
     build:
       context: ./backend
-      dockerfile: Dockerfile
+      dockerfile: rust.Dockerfile
       args:
         - postgres://postgres:postgres@db5432/postgres
     ports:
