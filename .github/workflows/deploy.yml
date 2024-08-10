@@ -1,0 +1,43 @@
+name: Deploy to Server
+
+on:
+  push:
+    branches:
+      - main  # или другая ветка, при пуше в которую вы хотите делать деплой
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Cache Docker layers
+        uses: actions/cache@v3
+        with:
+          path: /tmp/.buildx-cache
+          key: ${{ runner.os }}-buildx-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-buildx-
+
+      - name: Build and push Docker images
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          push: true
+          tags: username/app1:latest,username/app2:latest,username/nginx:latest  # Замените на ваши теги
+
+      - name: Deploy to server
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SERVER_IP: ${{ secrets.SERVER_IP }}
+          USER: ${{ secrets.SERVER_USER }}
+        run: |
+          echo "$SSH_PRIVATE_KEY" > private_key
+          chmod 600 private_key
+          scp -i private_key -o StrictHostKeyChecking=no -r ./deploy.sh $USER@$SERVER_IP:/tmp/
+          ssh -i private_key -o StrictHostKeyChecking=no $USER@$SERVER_IP 'bash /tmp/deploy.sh'
