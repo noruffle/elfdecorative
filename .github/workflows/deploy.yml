@@ -29,7 +29,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: username/app1:latest,username/app2:latest,username/nginx:latest  # Замените на ваши теги
+          tags: noruffle/frontend:latest,noruffle/backend:latest,db  # Замените на ваши теги
 
       - name: Deploy to server
         env:
