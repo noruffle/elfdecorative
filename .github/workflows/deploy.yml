@@ -32,11 +32,9 @@ jobs:
           tags: | 
             noruffle/frontend:latest
             noruffle/backend:latest
-            db  # Замените на ваши теги
           file: |
             frontend/next.Dockerfile
             backend/rust.Dockerfile
-            db
             
       - name: Deploy to server
         env:
