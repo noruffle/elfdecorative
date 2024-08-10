@@ -29,8 +29,8 @@ jobs:
         with:
           context: .
           file: |
-            ./frontend/next.Dockerfile
-            ./backend/rust.Dockerfile
+            /frontend/next.Dockerfile
+            /backend/rust.Dockerfile
           push: true
           tags: | 
             noruffle/frontend:latest
