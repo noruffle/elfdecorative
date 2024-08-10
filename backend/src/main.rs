@@ -46,7 +46,7 @@ async fn main() -> Result<()>{
       .service(crate::api::image::delete_image)
 
   })
-  .bind(("127.0.0.1", 8000))?
+  .bind(("0.0.0.0", 8080))?
   .run()
   .await
 }
