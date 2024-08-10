@@ -24,6 +24,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-buildx-
 
+      - name: List files
+        run: ls -R
+
       - name: Build and push Docker images
         uses: docker/build-push-action@v4
         with:
@@ -35,7 +38,10 @@ jobs:
           tags: | 
             noruffle/frontend:latest
             noruffle/backend:latest
-            
+      
+      - name: List files
+        run: ls -R
+
       - name: Deploy to server
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
