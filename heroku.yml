@@ -1,4 +1,4 @@
 build:
   docker:
-    web: ./backend/rust.Dockerfile
-    worker: ./frontend/node.Dockerfile
+    backend: ./backend/rust.Dockerfile
+    frontend: ./frontend/node.Dockerfile
