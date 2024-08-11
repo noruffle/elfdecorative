@@ -20,4 +20,4 @@ WORKDIR /user/local/bin
 COPY --from=build /app/target/release/backend .
 
 EXPOSE 8080
-CMD cargo run -r
+CMD ["./backend"]
