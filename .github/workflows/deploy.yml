@@ -30,7 +30,7 @@ jobs:
           ssh-keyscan -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
 
       - name: Deploy
-        run: doctl compute ssh --ssh-key-path ${{ secrets.SSH_PRIVATE_KEY }}
+        run: doctl compute ssh ${{ secrets.SERVER_IP }} --ssh-key-path ${{ secrets.SSH_PRIVATE_KEY }}
 
     #  - name: Install Docker Compose
     #    run: |
