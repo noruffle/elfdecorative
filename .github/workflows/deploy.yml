@@ -31,7 +31,7 @@ jobs:
 
       - name: SSH into Droplet and deploy
         run: |
-          ssh -i ~/.ssh/id_rsa root@$SERVER_IP "ls -la" << 'EOF'
+          ssh -i ~/.ssh/id_rsa root@${{ secrets.SERVER_IP }} "ls -la" << 'EOF'
             docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
             docker-compose pull
             docker-compose up -d
