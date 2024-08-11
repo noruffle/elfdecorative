@@ -63,6 +63,7 @@ jobs:
             docker-compose up -d
           EOF
         env:
+          SERVER_IP: ${{ secrets.SERVER_IP }}
           DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
           DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
 
