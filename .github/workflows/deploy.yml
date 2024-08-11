@@ -33,4 +33,4 @@ jobs:
           IP: ${{ secrets.SERVER_IP }}
         run: |
           ssh-keyscan $IP >> /root/.ssh/known_hosts
-          ssh -o StrictHostKeyChecking=no $USER@$IP "cd /var/www/html && git pull"
+          ssh $USER@$IP "cd /var/www/html && git pull"
