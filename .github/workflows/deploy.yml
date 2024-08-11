@@ -32,4 +32,4 @@ jobs:
           USER: ${{ secrets.SERVER_USER }}
           IP: ${{ secrets.SERVER_IP }}
         run: |
-          ssh $USER@$IP "cd /var/www/html && git pull"
+          ssh -o StrictHostKeyChecking=no $USER@$IP "cd /var/www/html && git pull"
