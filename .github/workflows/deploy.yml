@@ -33,5 +33,5 @@ jobs:
 
       - name: Deploy
         run: |
-          doctl compute ssh ${{ secrets.DROPLET_ID }} --ssh-key-path ~/.ssh/authorized_keys "ls -la"
-          doctl compute ssh ${{ secrets.DROPLET_ID }} --ssh-key-path ~/.ssh/authorized_keys "docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }} && docker-compose pull && docker-compose up -d"
+          doctl compute ssh ${{ secrets.DROPLET_ID }} --ssh-key-path /root/.ssh/authorized_keys "ls -la"
+          doctl compute ssh ${{ secrets.DROPLET_ID }} --ssh-key-path /root/.ssh/authorized_keys "docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }} && docker-compose pull && docker-compose up -d"
