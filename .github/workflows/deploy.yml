@@ -25,15 +25,13 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       
-      - name: Build and push
-        uses: docker/build-push-action@v6
+      - name: Run docker-compose
+        uses: hoverkraft-tech/compose-action@v2.0.1
         with:
-          context: ./
-          file: |
-            backend/rust.Deckerfile
-            frontend/node.Dockerfile
-          push: true
-          tags: noruffle/noruffle:latest
+          compose-file: "./docker-compose.yml"
+          services: |
+            backend
+            frontend
 
   deploy:
     runs-on: ubuntu-latest
