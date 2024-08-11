@@ -37,4 +37,4 @@ jobs:
           ssh-keyscan -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
 
      - name: Deploy to Droplet
-        run: doctl compute ssh ${{ secrets.DROPLET_ID }} -- "ls -la && docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }} && docker-compose pull && docker-compose up -d"
+        run: doctl compute ssh ${{ secrets.DROPLET_ID }} -- "docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }} && docker-compose pull && docker-compose up -d"
