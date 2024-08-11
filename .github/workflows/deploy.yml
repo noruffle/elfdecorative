@@ -31,5 +31,5 @@ jobs:
 
       - name: Deploy
         run: |
-          doctl compute ssh ${{ secrets.SERVER_ID }} "ls -la"
-          doctl compute ssh ${{ secrets.SERVER_ID }} --ssh-key-path ~/.ssh/id_rsa "docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }} && docker-compose pull && docker-compose up -d"
+          doctl compute ssh ${{ secrets.SSH_PRIVATE_KEY }} "ls -la"
+          doctl compute ssh ${{ secrets.SSH_PRIVATE_KEY }} --ssh-key-path ~/.ssh/id_rsa "docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }} && docker-compose pull && docker-compose up -d"
