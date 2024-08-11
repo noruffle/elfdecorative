@@ -33,7 +33,6 @@ jobs:
         run: |
           doctl compute ssh ${{ secrets.SERVER_ID }} --ssh-key-path ~/.ssh/id_rsa "ls -la"
           doctl compute ssh ${{ secrets.SERVER_ID }} --ssh-key-path ~/.ssh/id_rsa "docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }} && docker-compose pull && docker-compose up -d"
-        env: 
 
 
     #  - name: Install Docker Compose
