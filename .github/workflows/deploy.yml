@@ -32,4 +32,4 @@ jobs:
 
       - name: Deploy
         run: |
-          doctl compute ssh ${{ secrets.SERVER_IP }} 
+          doctl compute ssh ${{ secrets.DROPLET_ID }} 
