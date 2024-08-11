@@ -32,4 +32,4 @@ jobs:
 
       - name: Deploy
         run: |
-          doctl compute ssh ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }} 
+          doctl compute ssh ${{ secrets.SERVER_IP }} 
