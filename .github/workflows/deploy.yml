@@ -32,5 +32,4 @@ jobs:
 
       - name: Deploy
         run: |
-          doctl compute ssh ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }} "ls -la"
-          doctl compute ssh ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }} --ssh-key-path ~/.ssh/id_rsa "docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }} && docker-compose pull && docker-compose up -d"
+          doctl compute ssh ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }} 
