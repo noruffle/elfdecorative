@@ -24,6 +24,7 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
+          doctl auth init --access-token ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
 
       - name: Add SSH host to known hosts
         run: |
@@ -31,5 +32,5 @@ jobs:
 
       - name: Deploy
         run: |
-          doctl compute ssh ${{ secrets.SSH_PRIVATE_KEY }} "ls -la"
-          doctl compute ssh ${{ secrets.SSH_PRIVATE_KEY }} --ssh-key-path ~/.ssh/id_rsa "docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }} && docker-compose pull && docker-compose up -d"
+          doctl compute ssh ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }} "ls -la"
+          doctl compute ssh ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }} --ssh-key-path ~/.ssh/id_rsa "docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }} && docker-compose pull && docker-compose up -d"
