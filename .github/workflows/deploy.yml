@@ -57,7 +57,7 @@ jobs:
 
       - name: SSH into Droplet and deploy
         run: |
-          ssh -o StrictHostKeyChecking=no root@${{ secrets.SERVER_IP }}
+          ssh root@${{ secrets.SERVER_IP }}
           docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
           docker-compose pull
           docker-compose up -d
