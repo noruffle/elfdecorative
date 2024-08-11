@@ -24,15 +24,21 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
+
+      - name: Auth doctl
+        run: |
           doctl auth init --access-token ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+
+      - name: SSH-KEY List
+        run: |
           doctl compute ssh-key list
+
 
       - name: Add SSH host to known hosts
         run: |
           ssh-keyscan -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
 
-      - name: Deploy
+      - name: SSH into Droplet and deploy
         run: |
-
-          doctl compute ssh noruffle "ls -la"
-          doctl compute ssh noruffle "docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }} && docker-compose pull && docker-compose up -d"
+          doctl compute ssh ${{ secrets.DROPLET_ID }} --ssh-key-path ~/.ssh/id_rsa -- "ls -la"
+          doctl compute ssh ${{ secrets.DROPLET_ID }} --ssh-key-path ~/.ssh/id_rsa -- "docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }} && docker-compose pull && docker-compose up -d"
