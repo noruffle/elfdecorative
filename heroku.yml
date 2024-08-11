@@ -1,0 +1,29 @@
+setup:
+  addons:
+    - plan: heroku-postgresql
+      as: DATABASE
+
+build:
+  docker:
+    web: ./backend/rust.Dockerfile
+    worker: ./frontend/node.Dockerfile
+
+release:
+  command:
+    - ./backend/migrate.sh  # Запускать миграции только при необходимости
+
+run:
+  web: ./backend/start.sh
+  worker: ./frontend/start.sh
+
+env:
+  NEXT_PUBLIC_API_URL: https://noruffle-e83214531156.herokuapp.com
+  DATABASE_URL: ${DATABASE_URL}
+
+# Пример для настройки переменных окружения для разных сред
+# (замените значения на свои):
+config_vars:
+  development:
+    NEXT_PUBLIC_API_URL: https://noruffle-e83214531156.herokuapp.com
+  production:
+    NEXT_PUBLIC_API_URL: https://noruffle-e83214531156.herokuapp.com
