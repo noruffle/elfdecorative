@@ -32,5 +32,6 @@ jobs:
           USER: ${{ secrets.SERVER_USER }}
           IP: ${{ secrets.SERVER_IP }}
         run: |
+          ssh-copy-id $USER@$IP
           ssh-keyscan $IP >> /root/.ssh/known_hosts
           ssh $USER@$IP "cd /var/www/html && git pull"
