@@ -33,5 +33,6 @@ jobs:
 
       - name: Deploy
         run: |
-          doctl compute ssh ${{ secrets.DROPLET_ID }} "ls -la"
-          doctl compute ssh ${{ secrets.DROPLET_ID }} "docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }} && docker-compose pull && docker-compose up -d"
+
+          doctl compute ssh noruffle "ls -la"
+          doctl compute ssh noruffle "docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }} && docker-compose pull && docker-compose up -d"
