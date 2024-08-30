@@ -1,4 +1,4 @@
-build:
-  docker:
-    backend: ./backend/rust.Dockerfile
-    frontend: ./frontend/node.Dockerfile
+#build:
+#  docker:
+#    backend: ./backend/rust.Dockerfile
+#    frontend: ./frontend/node.Dockerfile
